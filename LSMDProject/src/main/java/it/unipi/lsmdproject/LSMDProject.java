@@ -5,8 +5,6 @@
 package it.unipi.lsmdproject;
 
 import org.apache.commons.lang3.StringUtils;
-
-
 /**
  *
  * @author erni
@@ -25,5 +23,6 @@ public class LSMDProject {
       // Verifica se la stringa è vuota
       boolean isEmpty = StringUtils.isEmpty(trimmedStr);
       System.out.println("La stringa è vuota? " + isEmpty);
+
     }
 }
