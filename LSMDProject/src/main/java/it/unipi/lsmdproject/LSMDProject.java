@@ -4,7 +4,12 @@
 
 package it.unipi.lsmdproject;
 
-import javafx.fxml.FXML;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
 
 /**
  *
@@ -13,7 +18,7 @@ import javafx.fxml.FXML;
 public class LSMDProject {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        FXML fxml = new FXML
+        Button btn = new Button();
+        StackPane root = new StackPane();
     }
 }
