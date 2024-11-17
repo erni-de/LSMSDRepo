@@ -1,4 +1,4 @@
-package it.unipi.lsmdproject;
+package it.unipi.lsmdproject.Geometry;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -9,6 +9,7 @@ package it.unipi.lsmdproject;
  *
  * @author erni
  */
+import it.unipi.lsmdproject.Geometry.Coordinates;
 import java.util.Arrays;
 import java.util.List;
 

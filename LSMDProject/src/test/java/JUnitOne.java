@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
-import it.unipi.lsmdproject.NominatimDocument;
-import it.unipi.lsmdproject.NominatimUtils;
+import it.unipi.lsmdproject.Nominatim.NominatimDocument;
+import it.unipi.lsmdproject.Nominatim.NominatimUtils;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import org.junit.jupiter.api.AfterEach;

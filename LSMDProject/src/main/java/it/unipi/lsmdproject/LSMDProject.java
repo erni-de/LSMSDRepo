@@ -4,6 +4,7 @@
 
 package it.unipi.lsmdproject;
 
+import it.unipi.lsmdproject.Nominatim.NominatimUtils;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.*;

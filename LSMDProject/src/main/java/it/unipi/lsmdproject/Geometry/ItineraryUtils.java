@@ -1,5 +1,7 @@
-package it.unipi.lsmdproject;
+package it.unipi.lsmdproject.Geometry;
 
+import it.unipi.lsmdproject.Geometry.Curve;
+import it.unipi.lsmdproject.Geometry.CoordinatesSquare;
 import java.util.Arrays;
 
 /*

@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package it.unipi.lsmdproject;
+package it.unipi.lsmdproject.Nominatim;
 
 import com.google.gson.annotations.SerializedName;
+import it.unipi.lsmdproject.Geometry.Coordinates;
 import java.io.Serializable;
 
 /**
