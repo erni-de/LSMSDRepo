@@ -9,15 +9,11 @@ import it.unipi.lsmdproject.Geometry.Coordinates;
 import java.io.Serializable;
 
 /**
- *
- * @author erni
- */
-public class NominatimDocument implements Serializable{
-    /*
     Class to serialize JSON documents returned by HTTP requests to the Nominatim server
     Not all JSON fields are read in this class implementation
-    We only retrieve
-    */
+    We only retrieve.
+ */
+public class NominatimDocument implements Serializable{
     
     //public String place_id;
     //public String osm_type;
@@ -29,7 +25,7 @@ public class NominatimDocument implements Serializable{
     //public String type;
     //public long place_rank;
     //public double importance;
-    //public String addresstype;
+    public String addresstype;
     public String name;
     public String display_name;
     //public String[] boundingbox;
@@ -45,7 +41,7 @@ public class NominatimDocument implements Serializable{
     public String getDisplay_name() {
         return display_name;
     }
-    
+
     @Override
     public String toString() {
         return "NominatimDocument{" + "lat=" + lat + ", lon=" + lon + ", name=" + name + ", display_name=" + display_name + '}';

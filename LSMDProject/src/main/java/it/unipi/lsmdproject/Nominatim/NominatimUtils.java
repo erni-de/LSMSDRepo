@@ -18,8 +18,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- *
- * @author erni
+ * Util class to handle Nominatim Requests.
  */
 public class NominatimUtils {
 
@@ -47,6 +46,7 @@ public class NominatimUtils {
         Requests the top n documents given an address name.
     */
     public static List<NominatimDocument> getDocuments(String address, int n) throws ProtocolException, MalformedURLException, IOException {
+        
         address = address.replace(" ", "_");
         URL url = new URL("https://nominatim.openstreetmap.org/search?q=" + address + "&format=json&limit=" + n);
         HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
@@ -67,6 +67,7 @@ public class NominatimUtils {
         Requests only the most relevant document given an address name.
     */
     public static NominatimDocument getFirstDocument(String address) throws ProtocolException, MalformedURLException, IOException {
+        
         address = address.replace(" ", "_");
         URL url = new URL("https://nominatim.openstreetmap.org/search?q=" + address + "&format=json&limit=1");
         HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
@@ -77,4 +78,5 @@ public class NominatimUtils {
         
         return gson.fromJson(s, NominatimDocument.class);
     }
+    
 }
