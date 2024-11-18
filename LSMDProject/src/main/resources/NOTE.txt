@@ -1,0 +1,8 @@
++------------------------NOTE SUL PROGETTO-----------------------+
+
+
+1) TRACKING DEI VEICOLI CON COORDINATE
+
+Guardando la teoria del prof, penso che un key-value database sia più che sufficiente per effettuare il tracking dei veicoli. Siccome i key-value database offrono velocità elevate nell'accesso ai dati semplici proporrei di usare un key-value DB piuttosto che un JSON per fare il tracking dei veicoli/pool andando quindi già ad usare due tipi diversi di NO-SQL DB (che è il minimo numero richiesto dal prof). 
+Questo trova anche un riscontro teorico, perché nella slide 4akey_value_DesignTips.pdf nell'ultimo esempio chiamato 
+"Case Study: K-V DBs for Mobile App Configuration (I)" il professore usa un key-value database per fare il tracking delle spedizioni
