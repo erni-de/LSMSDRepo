@@ -18,7 +18,8 @@ import java.util.Stack;
 public class LSMDProject {
 
     public static void main(String[] args) throws MalformedURLException, IOException, IOException {
-        System.out.println(NominatimUtils.getFirstDocument("Vezzano").getCoordinates());
-        
+        System.out.println("Prima della staampa");
+        System.out.println(NominatimUtils.getFirstDocument("Viareggio").getCoordinates());
+        System.out.println("Dopo la staampa");
     }
 }
