@@ -3,6 +3,48 @@
 
 1) TRACKING DEI VEICOLI CON COORDINATE
 
-Guardando la teoria del prof, penso che un key-value database sia pi� che sufficiente per effettuare il tracking dei veicoli. Siccome i key-value database offrono velocit� elevate nell'accesso ai dati semplici proporrei di usare un key-value DB piuttosto che un JSON per fare il tracking dei veicoli/pool andando quindi gi� ad usare due tipi diversi di NO-SQL DB (che � il minimo numero richiesto dal prof). 
-Questo trova anche un riscontro teorico, perch� nella slide 4akey_value_DesignTips.pdf nell'ultimo esempio chiamato 
+Guardando la teoria del prof, penso che un key-value database sia pi� che sufficiente per effettuare il tracking dei veicoli. Siccome i key-value database offrono velocit� elevate nell'accesso ai dati semplici proporrei di usare un key-value DB piuttosto che un JSON per fare il tracking dei veicoli/pool andando quindi gi� ad usare due tipi diversi di NO-SQL DB (che � il minimo numero richiesto dal prof). 
+Questo trova anche un riscontro teorico, perch� nella slide 4akey_value_DesignTips.pdf nell'ultimo esempio chiamato 
 "Case Study: K-V DBs for Mobile App Configuration (I)" il professore usa un key-value database per fare il tracking delle spedizioni
+
+
+2) JOIN OPERATION CON I DOCUMENT DATABASE (JSON)
+Guardando la teoria del prof, lui dice che (giustamente) non si possono fare JOIN operation con i document database.
+Per esempio, una relazione 1 A N (1 film ha N attori), la mappo in un unico file JSON, dove avrò il nome degli attori
+e sotto un array con gli N film a cui lui ha partecipato. Bisogna prestare attenzione a questo, perché a seconda
+delle operazioni che vogliamo fare rischiamo di avere una duplicazione e ridondanza nei dati allucinante e più che altro
+c'è il rischio di INCONSISTENZA NEI DATI
+
+CALIBRARE BENE QUALI OPERAIZONI FARE DAL PROGRAMMA BASANDOSI SUI LIMITI DI JSON
+3) MODELLARE I DATI IN BASE ALLE QUERY
+Come riporta il prof nelle slide che dice "In this context, the nature of the queries
+to be executed drives the approach to model data".
+Quindi prima definirei le query e successivamente le strutture dati, poi i file finali che conterrano i DB
+
+
+4) ESEMPIO TRACKING
+C'è un esempio del tracking che fa proprio al caso nostro, slide 10 del pdf 6_DocumentDatabase.pdf
+(Lui dice che qui c'è un problema di performance) ma se un singolo thread / processo gestisce il tracking di un file json,
+non è meglio quello piuttosto che avere un sacco di file JSON per ogni tracking da fare ?
+
+5) PLANNING DIMENSION OF THE DOCUMENT
+Nelle due slide dopo, dice che bisogna preimpostare le dimensioni del documento JSON per evitare di avere
+dei riallocamenti dal DBMS (MONGO) che portano a rallentmenti. Una soluzione nel nostro caso, abbastanza semplice
+può essere quella di calcolare quanti track avremmo in base al tempo stimato (media tra la stima dell'utente e quella del sistema)
+a fare quel percorso e da li calcoleremo quanti track abbiamo e di conseguenza la dimensione del file
+
+6) CALIBRARE LA GESTIONE DEGLI INDICI
+Bisgona capire quanti indici mettere a seconda del numero di operazioni read/write che abbiamo, che ci fa capire
+quindi di quanti indici abbiamo bisogno
+
+7) PARLARE DEGLI SHARDS
+L'ultima volta che ci siamo visti, suddividevamo in SHARD sharing e shard pooling. Studiando la teoria la divisione in shard
+è più pignola, con un nodo del cluster che può avere UN SOLO shard alla volta quindi va visto anche quello
+
+8) ENTITA E NORMALIZZAZONE - DENORMALIZZAZIONE
+Bisogna valutare bene quante entità avere e valutare se adottare una normalizzazione (quindi più entità) per avvicinarsi ad una struttura
+più SQL type, oppure una denormalizzazione per avere dati separati. Questo lo spiega bene in 7_Document_DB_Design_Tips
+
+9) VALUTARE I DATABASE A COLONNA
+Se abbiamo query che lavorano su tante righe è meglio utilizzare i database per colonna che permettono di lavorare molto più velocemente sui record
+
