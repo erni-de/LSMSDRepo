@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Welcome to My Website</title>
+        <link rel="stylesheet" href="../static/css/home.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+        <style>
+            /* Set the size of the map */
+            #map {
+                width: 100%;
+                height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#" th:text="${websiteName}">MyWebsite</a> <!-- Dynamic website name -->
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" th:href="@{/}">Home</a></li>
+                    <li><a href="#" th:href="@{/about}">About</a></li>
+                    <li><a href="#" th:href="@{/services}">Services</a></li>
+                    <li><a href="#" th:href="@{/contact}">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <search>
+        <bar class = "search-bar">
+            <div class = "way">
+                <input type="text" class="search-dep-box" placeholder="Departure" id="Departure">
+                <div class ="result-container">
+                    <div class = "suggestion-item" id="DepartureSuggestions"></div>
+                </div>
+            </div>
+            <div class = "way">
+                <input type="text" class="search-arr-box" placeholder="Arrival" id="Arrival">
+                <div class ="result-container">   
+                    <div class = "suggestion-item" id="ArrivalSuggestions"></div>
+                </div>    
+            </div>
+            <div class = "travel-date">
+                <input type="date" class="date-picker" id="flatpickr-date">
+            </div>
+            <div class = "passengers">
+                <label for="passenger-number">Number of Passengers:</label>
+                <input type="number" placeholder="Passengers" id="passenger-number" name="passenger-number" min="1" max="10" step="1" value="1">
+            </div>
+            <div>
+                <button type="submit" class="search-button" id="searchButton">Search</button>
+            </div>
+
+        </bar>
+
+    </search>
+
+    <div id="map"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span th:text="${currentYear}">2024</span> MyWebsite. All rights reserved.</p> <!-- Dynamic year -->
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="../static/js/home.js"></script>
+    <script src="../static/js/maps.js"></script>
+</body>
+</html>
