@@ -1,0 +1,141 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Nov 23, 2024, 10:32:14 PM
+    Author     : erni
+*//* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and basic styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar styles */
+header {
+    background-color: #333;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav .logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 1.5rem;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #f39c12;
+}
+
+/* Hero Section styles */
+.hero {
+    background-image: url('https://via.placeholder.com/1200x600'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 0.8rem 2rem;
+    background-color: #f39c12;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e67e22;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    nav .nav-links li {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
+
+
